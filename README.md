@@ -8,8 +8,9 @@ Installation instructions:
 2. Git clone
 3. npm install
 4. Start back-end using 'npm start' or 'nodemon start'
+
+##To populate the DB:
 ```
-To populate the DB:
 POST to: localhost:3000/api/artists/
 [
     {
