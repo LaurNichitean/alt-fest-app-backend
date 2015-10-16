@@ -58,4 +58,16 @@ router.delete('/:id', function (req, res) {
     })
 });
 
+/*
+ * Combined request
+ */
+
+router.get('/:artistId/songs', function (req, res) {
+  var db = req.db;
+  console.dir(req.params);
+  db.collection('songs').find({'artistId': req.params.artistId}).toArray(function (err, results) {
+    res.json(results)
+  });
+});
+
 module.exports = router;

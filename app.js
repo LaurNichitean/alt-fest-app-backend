@@ -20,6 +20,7 @@ MongoClient.connect("mongodb://localhost:27017/altFestBackend", function (err, d
 
 var routes = require('./routes/index');
 var artists = require('./routes/artists');
+var songs = require('./routes/songs');
 
 var app = express();
 // view engine setup
@@ -44,6 +45,7 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/api/artists', artists);
+app.use('/api/songs', songs);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
