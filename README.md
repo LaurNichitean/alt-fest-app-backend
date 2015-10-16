@@ -10,8 +10,9 @@ Installation instructions:
 4. Start back-end using 'npm start' or 'nodemon start'
 
 ##To populate the DB:
-```
+
 **POST to: localhost:3000/api/artists/**
+```
 [
     {
         "name": "Skrillex"
@@ -24,8 +25,9 @@ Installation instructions:
     }
 ]
 
-
+```
 **POST to: localhost:3000/api/songs/**
+```
 [
     {
         "likes": 0,
@@ -64,18 +66,19 @@ Installation instructions:
         "artistId": "56216ea9690c7da765f93afb" // change this id with your own
     }
 ]
-
-To get a list of songs for an artist:
+```
+**To get a list of songs for an artist:**
 localhost:3000/api/artists/56216ea9690c7da765f93af9/songs
 
 ##Allowed methods:
 **GET:**
+```
 localhost:3000/api/artists/
 localhost:3000/api/songs/
 localhost:3000/api/artists/:artistId/songs
-
+```
 **PUT, DELETE**
+```
 localhost:3000/api/artists/:id
 localhost:3000/api/songs/:id
-
 ```
