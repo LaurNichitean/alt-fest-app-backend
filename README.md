@@ -11,7 +11,7 @@ Installation instructions:
 
 ##To populate the DB:
 ```
-POST to: localhost:3000/api/artists/
+**POST to: localhost:3000/api/artists/**
 [
     {
         "name": "Skrillex"
@@ -25,7 +25,7 @@ POST to: localhost:3000/api/artists/
 ]
 
 
-POST to: localhost:3000/api/songs/
+**POST to: localhost:3000/api/songs/**
 [
     {
         "likes": 0,
@@ -64,4 +64,18 @@ POST to: localhost:3000/api/songs/
         "artistId": "56216ea9690c7da765f93afb" // change this id with your own
     }
 ]
+
+To get a list of songs for an artist:
+localhost:3000/api/artists/56216ea9690c7da765f93af9/songs
+
+##Allowed methods:
+**GET:**
+localhost:3000/api/artists/
+localhost:3000/api/songs/
+localhost:3000/api/artists/:artistId/songs
+
+**PUT, DELETE**
+localhost:3000/api/artists/:id
+localhost:3000/api/songs/:id
+
 ```
