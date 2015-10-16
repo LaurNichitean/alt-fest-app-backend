@@ -77,7 +77,7 @@ localhost:3000/api/artists/
 localhost:3000/api/songs/
 localhost:3000/api/artists/:artistId/songs
 ```
-**PUT, DELETE**
+**PUT, DELETE:**
 ```
 localhost:3000/api/artists/:id
 localhost:3000/api/songs/:id
