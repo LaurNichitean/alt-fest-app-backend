@@ -50,19 +50,19 @@ Installation instructions:
     {
         "likes": 0,
         "name": "Major Lazer - Watch out for this",
-        "urlYoutube": "https: //www.youtube.com/watch?v=8W_1vg7W6Oo",
+        "urlYoutube": "https://www.youtube.com/watch?v=8W_1vg7W6Oo",
         "artistId": "56216ea9690c7da765f93afa" // change this id with your own
     },
     {
         "likes": 0,
         "name": "M83-Oblivion(feat.SusanneSundfør)",
-        "urlYoutube": "https: //www.youtube.com/watch?v=1mkUp1V3ys0",
+        "urlYoutube": "https://www.youtube.com/watch?v=1mkUp1V3ys0",
         "artistId": "56216ea9690c7da765f93afb" // change this id with your own
     },
     {
         "likes": 0,
         "name": "M83'Reunion'Officialvideo",
-        "urlYoutube": "https: //www.youtube.com/watch?v=DJQQrjVmQG0",
+        "urlYoutube": "https://www.youtube.com/watch?v=DJQQrjVmQG0",
         "artistId": "56216ea9690c7da765f93afb" // change this id with your own
     }
 ]
