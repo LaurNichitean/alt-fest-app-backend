@@ -32,13 +32,13 @@ Installation instructions:
     {
         "likes": 0,
         "name": "Skrillex&Damian\"Jr.Gong\"Marley-MakeItBunDem[OFFICIALVIDEO]",
-        "urlYoutube": "https: //www.youtube.com/watch?v=BGpzGu9Yp6Y",
+        "urlYoutube": "https://www.youtube.com/watch?v=BGpzGu9Yp6Y",
         "artistId": "56216ea9690c7da765f93af9" // change this id with your own
     },
     {
         "likes": 0,
         "name": "FirstOfTheYear(Equinox)-Skrillex[OFFICIAL]",
-        "urlYoutube": "https: //www.youtube.com/watch?v=2cXDgFwE13g",
+        "urlYoutube": "https://www.youtube.com/watch?v=2cXDgFwE13g",
         "artistId": "56216ea9690c7da765f93af9" // change this id with your own
     },
     {
