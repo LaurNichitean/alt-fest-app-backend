@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
+var cors = require('cors');
 var ObjectId = require('mongodb').ObjectID;
 
 /*
@@ -27,9 +28,10 @@ router.get('/:id', function (req, res) {
  */
 router.post('/', function (req, res) {
   var db = req.db;
-  db.collection('songs').insert(req.body, function (err, result) {
+  db.collection('songs').insert(req.body, {w: 1}, function (err, result) {
+    console.log('result', result.insertedIds);
     res.send(
-      (err === null) ? {msg: ''} : {msg: 'Error adding song: ' + err}
+      (err === null) ? {msg: '', status: 200, insertedIds: result.insertedIds} : {msg: 'Error adding song: ' + err}
     )
   })
 });
@@ -37,13 +39,13 @@ router.post('/', function (req, res) {
 /*
  * PUT to modifySong.
  */
-router.put('/:id', function (req, res) {
+router.put('/:id', cors(), function (req, res) {
   var db = req.db;
   db.collection('songs').update({'_id': ObjectId(req.params.id)},
     {$set: req.body},
     function (err, result) {
       res.send(
-        (err === null) ? {msg: ''} : {msg: 'Error updating song: ' + err}
+        (err === null) ? {msg: '', status: 200} : {msg: 'Error updating song: ' + err}
       )
     })
 });
@@ -56,7 +58,7 @@ router.delete('/:id', function (req, res) {
   db.collection('songs').remove({'_id': ObjectId(req.params.id)},
     function (err, result) {
       res.send(
-        (err === null) ? {msg: ''} : {msg: 'Error deleting song: ' + err}
+        (err === null) ? {msg: '', status: 200} : {msg: 'Error deleting song: ' + err}
       )
     })
 });

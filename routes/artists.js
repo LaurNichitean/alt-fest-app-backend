@@ -26,7 +26,7 @@ router.post('/', function (req, res) {
   var db = req.db;
   db.collection('artists').insert(req.body, function (err, result) {
     res.send(
-      (err === null) ? {msg: ''} : {msg: 'Error adding artist: ' + err}
+      (err === null) ? {msg: '', status: 200, insertedIds: result.ops.insertedIds} : {msg: 'Error adding artist: ' + err}
     )
   })
 });
@@ -36,11 +36,11 @@ router.post('/', function (req, res) {
  */
 router.put('/:id', function (req, res) {
   var db = req.db;
-  db.collection('artists').update({'_id': ObjectId(req.params.id)},
+  db.collection('artists').updateOne({'_id': ObjectId(req.params.id)},
     {$set: req.body},
     function (err, result) {
       res.send(
-        (err === null) ? {msg: ''} : {msg: 'Error updating artist: ' + err}
+        (err === null) ? {msg: '', status: 200} : {msg: 'Error updating artist: ' + err}
       )
     })
 });
@@ -50,10 +50,10 @@ router.put('/:id', function (req, res) {
  */
 router.delete('/:id', function (req, res) {
   var db = req.db;
-  db.collection('artists').remove({'_id': ObjectId(req.params.id)},
+  db.collection('artists').deleteOne({'_id': ObjectId(req.params.id)},
     function (err, result) {
       res.send(
-        (err === null) ? {msg: ''} : {msg: 'Error deleting artist: ' + err}
+        (err === null) ? {msg: '', status: 200} : {msg: 'Error deleting artist: ' + err}
       )
     })
 });
