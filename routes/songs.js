@@ -31,7 +31,7 @@ router.post('/', function (req, res) {
   db.collection('songs').insert(req.body, {w: 1}, function (err, result) {
     console.log('result', result.insertedIds);
     res.send(
-      (err === null) ? {msg: '', status: 200, insertedIds: result.insertedIds} : {msg: 'Error adding song: ' + err}
+      (err === null) ? {msg: '', status: 201, insertedIds: result.insertedIds} : {msg: 'Error adding song: ' + err}
     )
   })
 });
