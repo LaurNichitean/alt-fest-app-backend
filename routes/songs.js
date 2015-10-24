@@ -39,9 +39,10 @@ router.post('/', function (req, res) {
 /*
  * PUT to modifySong.
  */
-router.put('/:id', cors(), function (req, res) {
+router.put('/:id', function (req, res) {
   var db = req.db;
-  db.collection('songs').update({'_id': ObjectId(req.params.id)},
+  console.log('req.body', req.body);
+  db.collection('songs').updateOne({'_id': ObjectId(req.params.id)},
     {$set: req.body},
     function (err, result) {
       res.send(
@@ -55,10 +56,10 @@ router.put('/:id', cors(), function (req, res) {
  */
 router.delete('/:id', function (req, res) {
   var db = req.db;
-  db.collection('songs').remove({'_id': ObjectId(req.params.id)},
+  db.collection('songs').removeOne({'_id': ObjectId(req.params.id)},
     function (err, result) {
       res.send(
-        (err === null) ? {msg: '', status: 200} : {msg: 'Error deleting song: ' + err}
+        (err === null) ? {msg: '', status: 200, result: result} : {msg: 'Error deleting song: ' + err}
       )
     })
 });

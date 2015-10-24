@@ -24,9 +24,10 @@ router.get('/:id', function (req, res) {
  */
 router.post('/', function (req, res) {
   var db = req.db;
-  db.collection('artists').insert(req.body, function (err, result) {
+  db.collection('artists').insert(req.body, {w: 1}, function (err, result) {
+    console.log('result', result.insertedIds);
     res.send(
-      (err === null) ? {msg: '', status: 201, insertedIds: result.ops.insertedIds} : {msg: 'Error adding artist: ' + err}
+      (err === null) ? {msg: '', status: 201, insertedIds: result.insertedIds} : {msg: 'Error adding artist: ' + err}
     )
   })
 });
